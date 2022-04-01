@@ -1,13 +1,15 @@
 import * as React from 'react';
-/* import Icon from './Icon'; */
 import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import '../components/NavBar.css'
+import CartWidget from '../components/CartWidget';
 
 
 export default function NavBar(){
+
 return (
     <>
          <Navbar bg="light" expand="lg">
-            <Container>
+            <Container className='contenedor-navbar'>
                 <Navbar.Brand href="#home">Mexican Racing League</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -21,6 +23,8 @@ return (
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">Contacto</NavDropdown.Item>
                     </NavDropdown>
+                    {/* <Nav.Link href='#link'><CartWidget cant={10}/> </Nav.Link> */}
+                    <CartWidget/> {/* Se manda a llamar a CartWidget */}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
