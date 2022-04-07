@@ -7,7 +7,8 @@ function App() {
   return (    
         <>
       <NavBar/>
-     {/*  <ItemListContainer/> */}
+      <h2>Bienvenidos a la Página de la liga de Sim Racing MRL</h2>
+      <ItemListContainer listaItems = {"Ferrari, Mercedes, Red Bull, Hass, Alfa Romeo, Alpha Tauri, Williams, McLaren, Alpine Aston Martin"} />
 
      {/*  /* <div className="App">
       <header className="App-header">
