@@ -16,7 +16,7 @@ export default function ItemCount({initial, stock}){ //aqui se recibe el tope y 
     }
     function Decrease(){
         
-        if (cant > initial){
+        if (cant >= initial){
             console.log(cant-1);
             setCant(cant-1);
           /*   console.log("Decremento\n"); */
