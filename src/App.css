@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.botonCantidad{
+  color: tomato;
+}
+.valorCantidad{
+  display: flex;
+  color: blue;
+  font-size: 2rem;
+  text-align: left;
+  margin: 0;
+  padding: 0 0 0 5rem;
+}
