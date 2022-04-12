@@ -37,14 +37,18 @@
   }
 }
 
-.botonCantidad{
-  color: tomato;
+.estiloCantidad{
+  color: blueviolet;
+  padding: 0 2rem 0 2rem;
+  font-size: 3rem;
 }
-.valorCantidad{
+
+.botonCantidad{
   display: flex;
-  color: blue;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  color: black;
   font-size: 2rem;
-  text-align: left;
-  margin: 0;
-  padding: 0 0 0 5rem;
+  width: 110px;
 }
