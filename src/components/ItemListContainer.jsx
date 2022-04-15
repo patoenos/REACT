@@ -1,24 +1,51 @@
-import React from 'react';
+
+import React, {useEffect, useState} from 'react';
 import ItemCount from './ItemCount';
 
-   
+export default function ItemListContainer({listaItems}){
+    /* let x; //scope global */
+    const [alumnos,setAlumnos] = useState([]); 
 
-export default function ItemListContainer(){
-    let initial = 1;
-    let stock = 20;
-    
-    function onAdd(cuanto){
-        alert(cuanto);
-       /*  arrayDeProductos=[]; todavia no funciona por lo de los estados que no he visto */
-    };
 
+    useEffect(()=>{
+        //first, se elimina el return porque no voy a hacer nada cuando se termine
+        
+        const promete = new Promise((resuelve, rechaza)=>{
+ 
+            setTimeout(()=>{
+                resuelve([
+                    {id:'abc123', name:"Antonio", descripcion: "Ingeniero", stock: 1},
+                    {id:'def456', name:"Ana Laura", descripcion: "Contadora", stock: 1},
+                    {id:'ghi789', name:"Isaac", descripcion: "Estudiante", stock: 1}
+                ]); 
+               /*  rechaza(null); */
+            },2000);            
+        })
+
+        promete
+        .then((aliasres)=>{
+            setAlumnos(aliasres);
+            console.log(aliasres);
+            
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    },[]);
+ 
 return (
-    <>        
-     <h3>En este ejemplo de contador, el valor inicial es 1 y el tope es 20</h3>
-     <h4>No deja subir de 20 y tampoco deja bajar de 0 a menos que se de clic en reseteo a 1</h4>
-      <br /> 
-      <ItemCount initial={initial} stock={stock}/>
-      {/* //Aparte de pasarle onAdd, pasarle el inventario(desde donde arranca y hasta donde) */}     
+    <>
+        <br />
+        Aca va la x: 
+        {alumnos.map((algo,i)=> 
+        <p key={i}>{ "  "+algo.id+"  "+ algo.name} </p> //Aqui deberia estar el componente ITEM
+        )}
+    
+        <br />
+
+       {/*  <ItemCount onAdd={onAdd}/> */}
+        <h3>Lista de equipos a escoger: {listaItems}</h3>
     </>
-)
+    
+);
 }

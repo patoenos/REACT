@@ -8,8 +8,7 @@ function App() {
   
   return (    
         <>
-      <NavBar/>
-     {/*  <h2>Bienvenidos a la Página de la liga de Sim Racing MRL</h2> */}
+      <NavBar/>    
       <ItemListContainer/>
       
      
