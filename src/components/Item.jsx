@@ -1,13 +1,23 @@
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
+import ItemCount from './ItemCount';
+import estilos from '../components/Item.module.css';
 
-export default function Item(){ //<-- aca va a recibir algo, seguro el elemento individual de un array del Item List
-return (
+
+export default function Item({id,descripcion,precio,imagen}){ //<-- aca va a recibir algo, seguro el elemento individual de un array del Item List
+return (    
+<>
+<Card key={id} className={estilos.cardDiv2} style={{ width: '18rem' }}>
+  <Card.Img variant="top" width={200} height={150} alt="Aqui va una IMG" src={imagen} />
+  <Card.Body>
+    <Card.Title className='altura'>{descripcion}</Card.Title>
     
-    <>
-    {/* item.nombre */}
-    {/* item.precio */}
-    {/* item.img  **poner imagen**  src=item.urlimg */}
-      
-    </>
+    <Card.Text className='textoCard'>
+     $ {precio}
+    </Card.Text>
+    <ItemCount initial={1} stock={5}  />        
+  </Card.Body>
+</Card>   
+</>
 )
 }   

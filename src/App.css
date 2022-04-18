@@ -38,17 +38,53 @@
 }
 
 .estiloCantidad{
+  display: flex;
   color: blueviolet;
+  margin: 0;
   padding: 0 2rem 0 2rem;
   font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
-
-.botonCantidad{
+.divEstilo{
   display: flex;
-  flex-direction: row;
   text-align: center;
   justify-content: center;
-  color: black;
-  font-size: 2rem;
+
+}
+.botonCantidad{
+  margin: 0;
+  display: flex;
+  background-color: #212529;
+  border-color: greenyellow;
+  align-items: center;
+  justify-content: center;
+  color: greenyellow;
+  font-size: 3.5rem;
+  padding: 0 0 0.5rem 0;
+  width: 50px;
+  height: 70px;
+}
+.botonCantidad2{
+  color: greenyellow;
+  background-color: #212529;
+  border-color: greenyellow;
+  font-size: 1.5rem;
   width: 110px;
+  padding: 0;
+}
+.numCarrito{
+  margin: 0;
+  color:whitesmoke;
+  font-size: 1.5rem;
+}
+
+
+.altura{
+  height: 50px;
+}
+.textoCard{
+  font-size: 1.5rem; 
 }

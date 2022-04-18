@@ -1,50 +1,33 @@
 
 import React, {useEffect, useState} from 'react';
-import ItemCount from './ItemCount';
+import customFetch from './CustomFetch';
+import ItemList from './ItemList';
+import catalogo from './Productos';
+import estilo from './ItemListContainer.module.css';
 
-export default function ItemListContainer({listaItems}){
-    /* let x; //scope global */
-    const [alumnos,setAlumnos] = useState([]); 
+export default function ItemListContainer(){
+    console.log("Lo que vale products ahora con catalogo1: \n");
+    console.log(catalogo);
 
+    const [prods,setProds] = useState([]); 
 
-    useEffect(()=>{
-        //first, se elimina el return porque no voy a hacer nada cuando se termine
-        
-        const promete = new Promise((resuelve, rechaza)=>{
- 
-            setTimeout(()=>{
-                resuelve([
-                    {id:'abc123', name:"Antonio", descripcion: "Ingeniero", stock: 1},
-                    {id:'def456', name:"Ana Laura", descripcion: "Contadora", stock: 1},
-                    {id:'ghi789', name:"Isaac", descripcion: "Estudiante", stock: 1}
-                ]); 
-               /*  rechaza(null); */
-            },2000);            
+    useEffect(()=>{        
+       customFetch(3000,catalogo)
+        .then(resultado=>{
+            setProds(resultado)
+            console.log("Resultado contiene03: \n");
+            console.log(resultado);
         })
+        .catch(err=>console.log(err));
+    },[prods])  
 
-        promete
-        .then((aliasres)=>{
-            setAlumnos(aliasres);
-            console.log(aliasres);
-            
-        })
-        .catch((err)=>{
-            console.log(err);
-        });
-    },[]);
- 
+    console.log("Aqui se imprime prods2");
+    console.log(prods);
 return (
     <>
-        <br />
-        Aca va la x: 
-        {alumnos.map((algo,i)=> 
-        <p key={i}>{ "  "+algo.id+"  "+ algo.name} </p> //Aqui deberia estar el componente ITEM
-        )}
-    
-        <br />
-
-       {/*  <ItemCount onAdd={onAdd}/> */}
-        <h3>Lista de equipos a escoger: {listaItems}</h3>
+        <div className={estilo.cardDiv}>
+        <ItemList  algo={prods}/> 
+        </div>
     </>
     
 );

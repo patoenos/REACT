@@ -1,0 +1,6 @@
+.cardDiv2{
+    display: flex;
+    flex-direction: column;
+    background-color: gainsboro;
+    padding: 0;
+  }
