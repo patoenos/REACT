@@ -50,7 +50,7 @@ return(
     <div className='divEstilo' >
     <Button className='botonCantidad2' variant="primary" onClick={Reset}>Reset a 1</Button>        
     <br />
-    <Button className='botonCantidad2' variant="primary" onClick={onAdd}>Comprar</Button>            
+    <Button disabled={cant<1} className='botonCantidad2' variant="primary" onClick={onAdd}>Comprar</Button>            
     </div>
     </>   
 )

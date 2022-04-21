@@ -28,7 +28,7 @@ const products = [
     description: "MultiChron",
     price: 1089,
     image: "https://www.aimtechnologies.com/wp-content/uploads/2018/10/MULTICHRON.jpg",
-    }
+    }   
 ]
 export default products;
 

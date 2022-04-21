@@ -6,28 +6,28 @@ import catalogo from './Productos';
 import estilo from './ItemListContainer.module.css';
 
 export default function ItemListContainer(){
-    console.log("Lo que vale products ahora con catalogo1: \n");
-    console.log(catalogo);
-
+   
     const [prods,setProds] = useState([]); 
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{        
-       customFetch(3000,catalogo)
+       customFetch(1000,catalogo)
         .then(resultado=>{
-            setProds(resultado)
-            console.log("Resultado contiene03: \n");
-            console.log(resultado);
+            setProds(resultado)          
         })
-        .catch(err=>console.log(err));
+        .catch(err=>console.log(err))
+        .finally(()=>{
+            setLoading(false);
+        });
     },[prods])  
-
-    console.log("Aqui se imprime prods2");
-    console.log(prods);
+    
 return (
     <>
-        <div className={estilo.cardDiv}>
-        <ItemList  algo={prods}/> 
-        </div>
+        {loading ? (<h2>Cargando Productos ...</h2>): (
+            <div className={estilo.cardDiv}>
+            <ItemList  algo={prods}/> 
+            </div>
+        )}        
     </>
     
 );

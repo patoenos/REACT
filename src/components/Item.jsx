@@ -3,8 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 import estilos from '../components/Item.module.css';
 
-
-export default function Item({id,descripcion,precio,imagen}){ //<-- aca va a recibir algo, seguro el elemento individual de un array del Item List
+export default function Item({id,descripcion,precio,imagen,counter}){ //<-- aca va a recibir algo, seguro el elemento individual de un array del Item List
 return (    
 <>
 <Card key={id} className={estilos.cardDiv2} style={{ width: '18rem' }}>
@@ -15,7 +14,9 @@ return (
     <Card.Text className='textoCard'>
      $ {precio}
     </Card.Text>
-    <ItemCount initial={1} stock={5}  />        
+    <Button variant="primary" disabled={counter}>Ver Detalle</Button>  
+    {counter ? (<ItemCount initial={1} stock={5}/>): counter=counter }
+         
   </Card.Body>
 </Card>   
 </>
