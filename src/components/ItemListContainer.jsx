@@ -11,7 +11,7 @@ export default function ItemListContainer(){
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{        
-       customFetch(1000,catalogo)
+       customFetch(3000,catalogo)
         .then(resultado=>{
             setProds(resultado)          
         })
