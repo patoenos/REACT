@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import customFetch from './CustomFetch';
 import ItemDetail from './ItemDetail';
-import aliasProductos from './Producto';
 import estilo from './ItemListContainer.module.css';
+import { useParams } from 'react-router-dom';
+import { traerProducto } from '../components/Productos';
 
 export default function ItemDetailContainer(){
     
     const [productito, setProducto] = useState({}); //inicializa un objeto vacío creo se diferencia de array porque es uno solo en el archivo  
+    const {idx} = useParams();
     
     useEffect (()=>{
-        customFetch(2000, aliasProductos) //Esto sería el GetItem de la consigna
+       traerProducto(idx)
         .then((loquesea)=>{
-            setProducto(loquesea)
+            setProducto(loquesea);
+            console.log('Promesa de un articulo: ',loquesea);
+            console.log('El id en este momento vale: ',idx);
         })
         .catch(err=>console.log(err));
-    }, [productito]);
+    }, [idx]);
 return (
     <>      
         <div className={estilo.cardDiv}>

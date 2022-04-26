@@ -1,17 +1,23 @@
 
 import React, {useEffect, useState} from 'react';
-import customFetch from './CustomFetch';
+import {traerProductos} from '../components/Productos';
 import ItemList from './ItemList';
-import catalogo from './Productos';
+/* import catalogo from './Productos'; */
 import estilo from './ItemListContainer.module.css';
+import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer(){
    
     const [prods,setProds] = useState([]); 
     const [loading, setLoading] = useState(true);
+    const {categoria} = useParams();
 
-    useEffect(()=>{        
-       customFetch(3000,catalogo)
+    
+    console.log('😃', categoria);
+
+    useEffect(()=>{  
+       setLoading(true);     
+       traerProductos(categoria)
         .then(resultado=>{
             setProds(resultado)          
         })
@@ -19,7 +25,7 @@ export default function ItemListContainer(){
         .finally(()=>{
             setLoading(false);
         });
-    },[prods])  
+    },[categoria])  
     
 return (
     <>

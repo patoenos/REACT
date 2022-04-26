@@ -5,32 +5,41 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import CartWidget from './CartWidget';
 import mrlLogo from '../imagenes/loguito.png'
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {  
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">
-    <img height={70} width={70} alt={"imagenMRL"} src={mrlLogo}></img>
-    </Navbar.Brand>
+    <Link to={`/`}><img height={70} width={70} alt={"imagenMRL"} src={mrlLogo}></img></Link>
     
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#features">Divisiones</Nav.Link>
-        <Nav.Link href="#pricing">Inscripciones</Nav.Link>
-        <NavDropdown title="Ver Más" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Resultados</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Reglamento</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Mercancía</NavDropdown.Item>
+        <Nav className='nav-link'>
+        <Link style={{color:"#939d9e"}} to={`/mercancia`}>Mercancia</Link>
+        </Nav>
+        <Nav className='nav-link'>
+      
+        </Nav>
+        
+        <NavDropdown title="Categorías" id="collasible-nav-dropdown">
+          <NavDropdown.Item ></NavDropdown.Item> 
+          <Link style={{color:"#939d9e"}} to={`/categoria/volantes`}>Volantes</Link>
+          <NavDropdown.Item ></NavDropdown.Item>  
+          <Link style={{color:"#939d9e"}} to={`/categoria/dashboards`}>Dashboards</Link>
+          <NavDropdown.Item ></NavDropdown.Item>             
+          <Link style={{color:"#939d9e"}} to={`/categoria/camaras`}>Camaras</Link>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Inscripciones</NavDropdown.Item>       
+          <NavDropdown.Item></NavDropdown.Item>   
+          <Link style={{color:"#939d9e"}} to={`/categoria/accesorios`}>Accesorios</Link>
+          
         </NavDropdown>
       </Nav>
       <Nav>
-        <Nav.Link href="#deets">Calendario</Nav.Link>
-        <Nav.Link eventKey={2} href="#memes">
+        <Nav.Link >Calendario</Nav.Link>
+        <Nav.Link eventKey={2} >
           Dank Memes
         </Nav.Link>
         <CartWidget/>

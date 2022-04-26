@@ -88,3 +88,10 @@
 .textoCard{
   font-size: 1.5rem; 
 }
+.imagenPrincipal{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: dimgray;  
+}
+

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 import estilos from '../components/Item.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Item({id,descripcion,precio,imagen,counter}){ //<-- aca va a recibir algo, seguro el elemento individual de un array del Item List
 return (    
@@ -14,8 +15,9 @@ return (
     <Card.Text className='textoCard'>
      $ {precio}
     </Card.Text>
-    <Button variant="primary" disabled={counter}>Ver Detalle</Button>  
-    {counter ? (<ItemCount initial={1} stock={5}/>): counter=counter }
+    <p>Este es el id{id}</p>
+    <Link style={{color:"#939d9e"}} to={`/articulo/${id}`}>Ver Detalle</Link>   {/* NI IDEA PORQUE NO LEE EL VALOR DE ID */}
+    {counter ? (<ItemCount initial={1} stock={5}/>): counter=false}
          
   </Card.Body>
 </Card>   
