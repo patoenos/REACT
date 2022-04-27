@@ -1,0 +1,35 @@
+.itemDetailDiv{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+   
+    
+    
+}
+.imagen{
+    display: flex;
+    justify-content: center;
+   
+}
+.redaccion{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+   color: black; 
+   
+   margin:0;
+   border:0;
+   
+   width: 700px
+}
+.redaccion h2 p {
+    margin: 0;
+    padding: 0 5rem;
+    background-color: bisque;
+    color: black;
+}
+.redaccion span{
+    color: blueviolet;
+    font-size: 2.5rem;
+}

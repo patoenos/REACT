@@ -6,7 +6,7 @@ export default function ItemList({algo}){
 return (
    <>   
    {algo.map(alias =>(
-   <Item key={alias.id} descripcion={alias.description} precio={alias.price} imagen={alias.image} counter={false}/>   
+   <Item id={alias.id} descripcion={alias.description} precio={alias.price} imagen={alias.image} counter={false}/>   
    ))}   
    
    </> 
