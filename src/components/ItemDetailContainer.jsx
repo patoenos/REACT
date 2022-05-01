@@ -7,6 +7,8 @@ import { traerProducto } from '../components/Productos';
 export default function ItemDetailContainer(){
     
     const [productito, setProducto] = useState({}); //inicializa un objeto vacío creo se diferencia de array porque es uno solo en el archivo  
+    /* let count=0;
+    const [canti, setCanti] = useState(count); */
     const {idx} = useParams();
     
     useEffect (()=>{

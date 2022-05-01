@@ -75,6 +75,18 @@
   width: 110px;
   padding: 0;
 }
+
+.verCarrito{
+  display: flex;
+  justify-content: center;
+  color: greenyellow;
+  background-color: #212529;
+  border-color: greenyellow;
+  font-size: 2rem;
+  width: 220px;
+  padding: 0;
+
+}
 .numCarrito{
   margin: 0;
   color:whitesmoke;

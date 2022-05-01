@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Principal from './components/Principal';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import NotFoundPage from './components/NotFoundPage';
+import PruebaOnClick from './components/PruebaOnClick';
+import Cart from './components/cart/Cart';
 
 
 function App() {
@@ -18,12 +20,13 @@ function App() {
       <BrowserRouter>
         <NavBar/>       
           <Routes>
-            <Route exact path="/" element={<Principal />} />
-            <Route exact path="/mercancia" element={<ItemListContainer />} /> 
+            {/* <Route exact path="/" element={<PruebaOnClick />} /> */}
+            <Route exact path="/" element={<ItemListContainer />} /> 
+            <Route exact path="/mercancia/" element={<ItemListContainer />} /> 
             <Route exact path="/categoria/:categoria" element={<ItemListContainer />} /> 
             <Route exact path="/articulo/:idx" element={<ItemDetailContainer/>} />  
-          
-            <Route path="*" element={<NotFoundPage />} /> 
+            <Route exact path="/cart/" element={<Cart/>} />  
+            <Route path="*" element={<NotFoundPage />} />  
           </Routes>
       </BrowserRouter>
      

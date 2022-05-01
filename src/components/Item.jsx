@@ -16,7 +16,7 @@ return (
      $ {precio}
     </Card.Text>
     <p>Este es el id{id}</p>
-    <Link style={{color:"#939d9e"}} to={`/articulo/${id}`}>Ver Detalle</Link>   {/* NI IDEA PORQUE NO LEE EL VALOR DE ID */}
+    <Link style={{color:"#939d9e"}} to={`/articulo/${id}`}>Ver Detalle</Link>   
     {counter ? (<ItemCount initial={1} stock={5}/>): counter=false}
          
   </Card.Body>

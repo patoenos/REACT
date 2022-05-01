@@ -1,11 +1,18 @@
-import React from 'react';
-import Item from './Item';
+import React, {useState} from 'react';
+
 import ItemCount from './ItemCount';
 import estilo from '../components/ItemDetail.module.css';
 
 
 export default function ItemDetail({pasarProds}){ 
-    
+
+    const [number, setNumber] = useState(0);
+
+    function addToCart(cantidad){
+        setNumber(cantidad);
+        console.log('Items: ',cantidad);
+    }
+
 return (
     <>
     {pasarProds.id &&
@@ -28,7 +35,9 @@ return (
             </div>
         </div>
         <br /><br />
-        <ItemCount initial={1} stock={pasarProds.stock}/>
+        
+        {/* {cantidad === 0 ? <ItemCount initial={1} stock={pasarProds.stock} addToCart={addToCart}/> : <Button as={Link} to="/cart" variant="outline-info" >Ir al carrito, ({cantidad} items agregados)</Button>} */}
+        <ItemCount initial={1} stock={pasarProds.stock} addToCart={addToCart}/>
        
     </div>
     } {!pasarProds.id && <h2>Cargando Producto ...</h2>}
